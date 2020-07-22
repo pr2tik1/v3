@@ -55,9 +55,11 @@
           <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-
+          <li><a href="#portfolio"><i class="bx bx-book-content"></i> Projects</a></li>
+          <li><a href="#services"><i class="bx bx-book-reader"></i> Blogs </a></li>
+          <li><a href="#certification"><i class="bx bx-certification"></i> Certifications</a></li>
+      <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+  
         </ul>
       </nav><!-- .nav-menu -->
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -104,11 +106,27 @@
         </div>
 
         <div class="portfolio-description">
-          <h2>About</h2>
+          <h2><strong>Objective</strong></h2>
           <p>
             I have used transfer learning and pretrained models such as VGG16, AlexNet and ResNet to classify dog breed images. The project is divided into two sub projects, first is developed with complete scripting for local use, and second is developed with AWS SageMaker for deployment.
           </p>
-          <li><strong>Tech Stack:</strong> Python, AWS SageMaker, PyTorch, Pandas, Plotly</li>
+            <br>
+          <h4><strong>Tech Stack</strong></h4><p>Python, AWS SageMaker, PyTorch, Pandas, Plotly</p>
+            <br>
+          <h4><strong>Image Classification</strong></h4>
+            <p>
+            Image Classification is a supervised learning problem: define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos. Early image classification tasks were performed with data driven approaches such as Nearest Neighbour Classifier. These were not so effective approach because it consisted of compairing the image under consideration with each of the images in training data. The metric used were L1 and L2 distances. Convolution Neural Networks yield better results in classifying images as compared to traditional linear classification algorithms. Hence I have used CNNs, and that too pretrained neural network such as VGG16, AlexNet and ResNet, with the transefer learning approach. 
+            </p>
+            <div>
+                <p style="text-align:center;"><img src="assets/images/imageclassifier.gif" alt="description of gif"  style="width:800px;height:500px;">
+            </div>            
+            <br><br>
+          <h4><strong>Transfer Learning</strong></h4>  
+            <p>Transfer learning approach, is utilizing the selected pretrained network and then adapting of neural network to a new (similar) dataset. The approach keeps all the convolutional layers but replacing the final fully connected layers with another neural network. The base network "transfers" the learnt features to targeted network.
+            </p>
+            <div>
+                <p style="text-align:center;"><img src="assets/images/transfer.gif" alt="description of gif"  style="width:600px;height:250px;">
+            </div>            
         </div>
 
       </div>
