@@ -106,44 +106,77 @@
         </div>
 
         <div class="portfolio-description">
-          <h2><strong>Objective</strong></h2>
+          <h1><strong>Objective</strong></h1>
           <p>
-            I have used transfer learning and pretrained models such as VGG16, AlexNet and ResNet to classify dog breed images. The project is divided into two sub projects, first is developed with complete scripting for local use, and second is developed with AWS SageMaker for deployment.
+            The project aims to accurately classify dog breeds using their RGB images. The project is sub-divided into two parts, first is developed with complete scripting for local use, and second is developed with AWS SageMaker for deployment.
           </p>
             <br>
-          <h4><strong>Tech Stack</strong></h4><p>Python, AWS SageMaker, PyTorch, Pandas, Plotly</p>
+          <h1><strong>Tech Stack</strong></h1><p>Python, AWS SageMaker, PyTorch, Pandas, Plotly</p>
             <br>
-          <h4><strong>Image Classification</strong></h4>
+          <h1><strong>Image Classification</strong></h1>
             <p>
-            <b>Image Classification</b> is a supervised learning problem where we define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos. The images are considered to be matrix of pixel values ranging from 0-255 which represent the intensity. Early image classification tasks were performed with data driven approaches such as Nearest Neighbour Classifier. These were not so effective approach because it comprises of compairing the image from test dataset with each of the images from training data. The algorithm was simple to implement but was computationally inefficient and had low accuracy on raw pixels. 
+            <b>Image Classification</b> is a supervised learning problem where we define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos. The images are considered to be matrix of pixel values ranging from 0-255 which represent the intensity. Early image classification tasks were performed with data driven approaches such as Nearest Neighbour Classifier. These were not so effective approach because it comprises of compairing (L1 and L2 distances) an image from test dataset with each of the images from training data one by one. The algorithm was simple to implement but was computationally inefficient and had low accuracy on raw pixels.</p> 
             <br>
             <div>
+                <p style="text-align:center;"><img src="assets/images/dog-vs-cat.jpg" alt="description of png"  style="width:650px;height:300px;">
+				<div> <p style="text-align:center;"><i>Image Classification</i> </p></div>
+            </div>            
+            <br>
+            <h3><strong>Multi-Layered Perceptron</strong></h3>
+            <p>The <b>fully connected feed-forward neural network</b> architecture (MLP) is used for Image Classification. However, they are ineffective, as flattening the images of higher pixel dependencies would result in poor precision. The MLP in the case of grayscale MNIST Digit images with low pixel dimensions performs well, but is inefficient in case of complex images (with RGB values). The number of parameters to be learned is too high for the MLP network, making the model to be computationally costlier. The high parameters also mean it will need more training data, convergence time increased and it may also lead to overfitted model archtitecture.</p>
+            <br>
+            <div>
+                <p style="text-align:center;"><img src="assets/images/mlp-flatten.png" alt="description of png"  style="width:350px;height:280px;">
+				<div> <p style="text-align:center;"><i>Flattening operation of small input matrix with pixel values in MLP</i> </p></div>
+            </div>            
+            <br>
+            <h3><strong>Convolution Neural Networks</strong></h3> 
+	            <p>The <b> CNN </b>yield better results in classifying images as compared to traditional linear and non linear classification algorithms. This is because they reduce the number of parameters to learn and there is no need of any preprocessing for feature-extraction. The CNNs uses convolutions of the image and the filter to extract complex invariant features at each layer. The complexity of features extracted increases with depth of layers (eg. [Layer 1: edges] -> [Layer 2: shapes] -> [Layer 3: pattern of shapes] -> .... -> output). They successfully capture the spatial and temporal dependancies within the image. The important features that make CNN special from others are, <b>Convolutions</b> and <b>Pooling</b>.</p> 
+			<div>
                 <p style="text-align:center;"><img src="assets/images/imageclassifier.gif" alt="description of gif"  style="width:800px;height:500px;">
+            	<div> <p style="text-align:center;"><i>Image Classification using CNN</i> </p></div>
             </div>            
             <br>
-            <b>Multi-Layered Perceptron</b> can also be used for Image Classification. However, they are ineffective, as flattening the images of higher pixel dependencies would result in poor precision. The MLP in the case of grayscale MNIST Digit images with low pixel dimensions performs well, but is inefficient in case of complex images (with RGB values). The number of parameters to be learned is too high for the MLP network, making the model to be computationally costlier. The high parameters also mean it will need more training data, convergence time increased and it may also lead to overfitted model archtitecture. 
             <br>
+            <h4>1.<i> Convolutions</i></h4> 
             <div>
-                <p style="text-align:center;"><img src="assets/images/mlp-flatten.png" alt="description of png"  style="width:300px;height:300px;">
-				<div> <p style="text-align:center;">(Flattening operation of small input matrix with pixel values in MLP)</p></div>
-            </div>            
-            <br>
-            <b>Convolution Neural Networks</b> yield better results in classifying images as compared to traditional linear and non linear classification algorithms. This is because they reduce the number of parameters to learn and there is no need of any preprocessing for feature-extraction. The CNNs uses convolutions of the image and the filter to extract complex invariant features at each layer. The complexity of features extracted increases with depth of layers (eg. [Layer 1: edges] -> [Layer 2: shapes] -> [Layer 3: pattern of shapes]). They successfully capture the spatial and temporal dependancies within the image. 
-            <div>
-                <p style="text-align:center;"><img src="assets/images/no_padding_no_strides.gif" alt="description of gif"  style="width:400px;height:420px;">
-            	<div> <p style="text-align:center;">(A simple convolution operation in CNN Layer, Blue: Input and Green: Output)</p></div>
-            </div>            
-
+                <p style="text-align:center;"><img src="assets/images/no_padding_no_strides.gif" alt="description of gif"  style="width:200px;height:220px;">
+            	<img src="assets/images/no_padding_strides.gif" alt="description of gif"  style="width:200px;height:220px;">
+            	<img src="assets/images/no_padding_no_strides_transposed.gif" alt="description of gif"  style="width:200px;height:220px;">
+            	<img src="assets/images/full_padding_no_strides_transposed.gif" alt="description of gif"  style="width:200px;height:220px;">
+            	<br>
+            	<div> <p style="text-align:center;"><i>Convolutions in CNN</i>, Blue: <i>Input</i> and Green: <i>Output</i></p></div>
+            </div>
+            <p>These are basically merging two sets of information. Mathematically, convolution refers to combination of two function to yield third function. In the case of CNN, convolution is the application of filters/kernels to an input image resulting in activations. Feature maps are what we get on repeated applications of such filters over the input. These feature map indicate the locations learned and strength of detected feature of input, i.e., they summarize the presence of detected features in input. The simple MLP does not consider the order and importance of neighbouring pixels. CNN on other hand, as described above, takes the advantage using convolutions.</p> 
+            <p>
+            The problem of feature maps is that these are sensitive to locations of features in input. One way to adress the issue is to down sample the feature map. This is addressed by <i>pooling</i>.   
             </p>
+            <h4>2.<i> Pooling</i></h4>
+            <p>Pooling layers provide an approach to down sampling feature maps by summarizing the presence of features in patches of the feature map. Two common pooling methods are average pooling and max pooling. 
+            <div>
+                <p style="text-align:center;"><img src="assets/images/pooling.png" alt="description of gif"  style="width:400px;height:400px;">
+            	<br>
+            	<div> <p style="text-align:center;"><i>Max Pooling and Average Pooling in CNN </i></p></div>
+            </div>
             <br><br>
-          <h4><strong>Transfer Learning</strong></h4>  
-            <p><b>Transfer learning</b>, is utilizing the selected pretrained network and then adapting of neural network to a new (similar) dataset. The approach keeps all the convolutional layers but replacing the final fully connected layers with another neural network. The base network "transfers" the learnt features to targeted network.
+            The above discussed are the reasons why I chose CNN architecture for the purpose of image classification. Further, I used pretrained models to classify the target dataset, dog images. </p>
+            <br>
+          <h3><strong>Transfer Learning</strong></h3>  
+            <p>The <b>Transfer learning</b> approach, is utilizing the selected pretrained network and then adapting of neural network to a new (similar) dataset. The approach keeps all the convolutional layers but replacing the final fully connected layers with another neural network. The base network "transfers" the learnt features to targeted network.
             </p>
             <div>
-                <p style="text-align:center;"><img src="assets/images/transfer.jpeg" alt="description"  style="width:500px;height:250px;">
+                <p style="text-align:center;"><img src="assets/images/transfer.jpeg" alt="description"  style="width:600px;height:250px;">
             </div>            
         </div>
+        	<p><i>For pretrained CNNs I have chosen the classic VGG, AlexNet, and ResNet. With the help of deep learning frameworks such as PyTorch I developed the scripts and jupyter notebooks to get accuarate predictions and good results. Following are the results of classification over unseen test dataset. To view the code follow link shared above in the description box.</i></p>
 
+        	<div>
+        		<p style="text-align:center;"><img src="assets/images/2.png"   style="width:450px;height:300px;">
+            	<img src="assets/images/3.png"   style="width:450px;height:300px;">
+            	<br><br>
+            	<img src="assets/images/5.png"   style="width:450px;height:300px;">
+            	<img src="assets/images/4.png"   style="width:450px;height:300px;">
+        	</div>
       </div>
     </section><!-- End Portfolio Details Section -->
 
