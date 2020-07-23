@@ -115,17 +115,32 @@
             <br>
           <h4><strong>Image Classification</strong></h4>
             <p>
-            Image Classification is a supervised learning problem: define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos. Early image classification tasks were performed with data driven approaches such as Nearest Neighbour Classifier. These were not so effective approach because it consisted of compairing the image under consideration with each of the images in training data. The metric used were L1 and L2 distances. Convolution Neural Networks yield better results in classifying images as compared to traditional linear classification algorithms. Hence I have used CNNs, and that too pretrained neural network such as VGG16, AlexNet and ResNet, with the transefer learning approach. 
-            </p>
+            <b>Image Classification</b> is a supervised learning problem where we define a set of target classes (objects to identify in images), and train a model to recognize them using labeled example photos. The images are considered to be matrix of pixel values ranging from 0-255 which represent the intensity. Early image classification tasks were performed with data driven approaches such as Nearest Neighbour Classifier. These were not so effective approach because it comprises of compairing the image from test dataset with each of the images from training data. The algorithm was simple to implement but was computationally inefficient and had low accuracy on raw pixels. 
+            <br>
             <div>
                 <p style="text-align:center;"><img src="assets/images/imageclassifier.gif" alt="description of gif"  style="width:800px;height:500px;">
             </div>            
+            <br>
+            <b>Multi-Layered Perceptron</b> can also be used for Image Classification. However, they are ineffective, as flattening the images of higher pixel dependencies would result in poor precision. The MLP in the case of grayscale MNIST Digit images with low pixel dimensions performs well, but is inefficient in case of complex images (with RGB values). The number of parameters to be learned is too high for the MLP network, making the model to be computationally costlier. The high parameters also mean it will need more training data, convergence time increased and it may also lead to overfitted model archtitecture. 
+            <br>
+            <div>
+                <p style="text-align:center;"><img src="assets/images/mlp-flatten.png" alt="description of png"  style="width:300px;height:300px;">
+				<div> <p style="text-align:center;">(Flattening operation of small input matrix with pixel values in MLP)</p></div>
+            </div>            
+            <br>
+            <b>Convolution Neural Networks</b> yield better results in classifying images as compared to traditional linear and non linear classification algorithms. This is because they reduce the number of parameters to learn and there is no need of any preprocessing for feature-extraction. The CNNs uses convolutions of the image and the filter to extract complex invariant features at each layer. The complexity of features extracted increases with depth of layers (eg. [Layer 1: edges] -> [Layer 2: shapes] -> [Layer 3: pattern of shapes]). They successfully capture the spatial and temporal dependancies within the image. 
+            <div>
+                <p style="text-align:center;"><img src="assets/images/no_padding_no_strides.gif" alt="description of gif"  style="width:400px;height:420px;">
+            	<div> <p style="text-align:center;">(A simple convolution operation in CNN Layer, Blue: Input and Green: Output)</p></div>
+            </div>            
+
+            </p>
             <br><br>
           <h4><strong>Transfer Learning</strong></h4>  
-            <p>Transfer learning approach, is utilizing the selected pretrained network and then adapting of neural network to a new (similar) dataset. The approach keeps all the convolutional layers but replacing the final fully connected layers with another neural network. The base network "transfers" the learnt features to targeted network.
+            <p><b>Transfer learning</b>, is utilizing the selected pretrained network and then adapting of neural network to a new (similar) dataset. The approach keeps all the convolutional layers but replacing the final fully connected layers with another neural network. The base network "transfers" the learnt features to targeted network.
             </p>
             <div>
-                <p style="text-align:center;"><img src="assets/images/transfer.gif" alt="description of gif"  style="width:600px;height:250px;">
+                <p style="text-align:center;"><img src="assets/images/transfer.jpeg" alt="description"  style="width:500px;height:250px;">
             </div>            
         </div>
 
