@@ -394,10 +394,8 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    
     <section id ="services" class="services"> 
     	<div class="container"  data-aos="fade-up" data-aos-delay="150">
-
 	    	<div class="section-title">
 	          <h2>Blogs</h2>
 	        </div>
@@ -405,10 +403,43 @@
 		    <div id="medium-widget"></div>
 		    <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
 		    <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@pratikbaitha04","postsPerLine":2,"limit":4,"picture":"big","fields":["author","claps","publishAt"],"ratio":"landscape"}})</script>
-
-
         </div>
     </section>
+
+<!--=====================Github==================-->
+		<section id ="github" class="github">
+			
+			<div class="container">
+				<div class="section-title" data-aos = "fade-up" data-aos-delay="150"> 
+				<h2>Github Calendar</h2>
+				<p>View my contributions via github calendar. Check my profile <a href="https://github.com/pr2tik1">here</a></p>
+				<br>
+		        <!-- Include the library. -->
+						<script
+						  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"
+						></script>
+
+						<!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+						<link
+						   rel="stylesheet"
+						   href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+						/>
+
+						<!-- Prepare a container for your calendar. -->
+						<div class="calendar">
+						    <!-- Loading stuff -->
+						    Loading the data just for you.
+						</div>
+
+						<script>
+						    GitHubCalendar(".calendar", "pr2tik1", { responsive: true });
+						</script>
+
+		        </div>
+
+			</div>
+        	
+		</section>
 
 
     <!--CERTIFICATIONS-->
@@ -437,8 +468,6 @@
 				</div>
 	       </div>
      	
-
-
      	<div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <div class="portfolio-links">
@@ -454,9 +483,6 @@
 				</div>
 	       </div>
      	
-
-
-
 				<div class="col-lg-4 col-md-6 portfolio-item filter-card">
 		            <div class="portfolio-wrap">
 		              <div class="portfolio-links">
@@ -488,25 +514,7 @@
           </div>
            </div>
      	</div>
-
-    </section> 
-
-	<!--Position of responsibilties	-->
-		<section id ="about" class="about">
-			
-			<div class="container">
-				<div class="section-title" data-aos = "fade-up" data-aos-delay="150">
-		          <h2>Responsibilities</h2>
-		          <h4><li>Head Coordinator of Sports Committee SHAURYA, NITRR</li></h4><p>As a head coordinator, I managed football tournaments and design team while conducting the sports festival of college named SAMAR. </p>
-		          <br>
-		          <h4><li>Head Design Team of IEEE Committee, NITRR</li></h4><p>I led the design team of the IEEE Student branch, NIT Raipur.</p>
-		          <br>
-		          <h4><li>Captain of college Football Team, NITRRFC</li></h4><p>Led my football team in tournaments and matches.</p>
-		          
-		        </div>
-			</div>
-        	
-		</section>
+	</section> 
 		
 
     <!-- ======= Contact Section ======= -->
