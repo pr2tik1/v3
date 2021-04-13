@@ -45,15 +45,24 @@
 - name: Maze Sover
   url: https://github.com/pr2tik1/maze-solver
   code: https://github.com/pr2tik1/maze-solver
-  description: Implementation of A* path searching algorithm to find path in the maze provided, for the car to reach the destination.
+  description: Implementation of A* path searching algorithm to find path in the maze provided.
   used:
     - thing: C++
 
 - name: Approximation power of Neural Networks
   url: https://github.com/pr2tik1/universal-approximation
   code: https://github.com/pr2tik1/universal-approximation
-  description: Using Python and plotting libraries to understand the power of Neural Networks.
+  description: Used Python and plotting libraries to understand the power of Neural Networks.
   used:
     - thing: Python
     - thing: Numpy
     - thing: Jupyter Notebook
+
+- name: Portfolio Website(old version) 
+  url: https://github.com/pr2tik1/v2
+  code: https://github.com/pr2tik1/v2
+  description: Github Web-Page as portfolio.
+  used:
+    - thing: HTML
+    - thing: CSS
+    - thing: Javascript
