@@ -1,12 +1,12 @@
 # Site settings
 name: Pratik Kumar
 title: Pratik Kumar | Data Scientist
-description: 
+description: A data science and deep learning enthusiast focused on building data driven products A.I. research.
 url: https://pr2tik1.github.io/
 baseurl: ''
 email: pr2tik1@gmail.com
-cover: https://bchiang7.github.io/img/og.png
-logo: https://bchiang7.github.io/img/emojis/technologist.png
+cover: https://pr2tik1.github.io/img/og.png
+logo: https://pr2tik1.github.io/img/emojis/rocket.png
 resume: https://pr2tik1.github.io/resume.pdf
 social:
   - title: email
