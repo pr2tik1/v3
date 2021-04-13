@@ -1,0 +1,23 @@
+languages:
+  - item: Python
+  - item: C
+  - item: C++
+  - item: SQL
+  - item: HTML
+  - item: PostgreSQL 
+
+frameworks:
+  - item: PyTorch
+  - item: Tensorflow
+  - item: Flask
+  - item: Streamlit
+  - item: Dash
+
+tools:
+  - item: Bash
+  - item: Git & Github
+  - item: PgAdmin
+
+design:
+  - item: Photoshop
+  - item: Illustrator
