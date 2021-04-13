@@ -49,10 +49,11 @@
   used:
     - thing: C++
 
-- name: Implementation of Universal Approximation Theorem for Neural Networks
+- name: Approximation power of Neural Networks
   url: https://github.com/pr2tik1/universal-approximation
   code: https://github.com/pr2tik1/universal-approximation
   description: Using Python and plotting libraries to understand the power of Neural Networks.
   used:
     - thing: Python
+    - thing: Numpy
     - thing: Jupyter Notebook
