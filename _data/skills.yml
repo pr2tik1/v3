@@ -4,19 +4,18 @@ languages:
   - item: C++
   - item: SQL
   - item: HTML
-  - item: PostgreSQL 
 
 frameworks:
   - item: PyTorch
   - item: Tensorflow
   - item: Flask
   - item: Streamlit
-  - item: Dash
+  - item: Dash by Plotly
 
 tools:
   - item: Bash
   - item: Git & Github
-  - item: PgAdmin
+  - item: Jupyter Notebook & Lab
 
 design:
   - item: Photoshop
