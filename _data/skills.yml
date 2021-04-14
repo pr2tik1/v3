@@ -7,7 +7,6 @@ languages:
 
 frameworks:
   - item: PyTorch
-  - item: Tensorflow
   - item: Flask
   - item: Streamlit
   - item: Dash by Plotly
