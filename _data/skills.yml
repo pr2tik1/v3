@@ -1,22 +1,19 @@
 languages:
   - item: Python
-  - item: C
-  - item: C++
+  - item: C/C++
   - item: SQL
   - item: HTML
 
 frameworks:
   - item: PyTorch
-  - item: Flask
   - item: Streamlit
   - item: Dash by Plotly
 
 tools:
   - item: Bash
-  - item: Git & Github
-  - item: Jupyter Notebook & Lab
+  - item: Git 
+  - item: Jupyter Notebook
 
 design:
   - item: Photoshop
-  - item: Illustrator
   - item: Canva
