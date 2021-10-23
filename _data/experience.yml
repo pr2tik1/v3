@@ -1,9 +1,14 @@
+- company: Elucidata
+  url: https://elucidata.io
+  time: August 2021 - Present
+  position: Data Analyst
+
+- company: Elucidata
+  url: https://elucidata.io
+  time: May 2021 - August 2021
+  position: Data Science Intern
+
 - company: Bayer Crop Science
   url: https://www.cropscience.bayer.com/
   time: May 2019 - July 2019
-  position: Data Science Intern
-  
-- company: Elucidata
-  url: https://elucidata.io
-  time: May 2021 - Present
   position: Data Science Intern
