@@ -1,12 +1,4 @@
-# Personal web page 
-Design inspired by https://github.com/bchiang7/bchiang7.github.io
+# Personal web page # 4
+---
 
-## Dependencies
-
-- [Gulp](https://gulpjs.com/)
-
-## Getting Started
-
-1.  `gem install jekyll sass bundler jekyll-minifier jekyll-sitemap`
-2.  `npm install`
-3.  `npm start`
+Date : 19.06.23
