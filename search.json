@@ -56,13 +56,6 @@
     "text": "(F) Custom Plots\nIn the final section we would see the go.Figure subplots, where fully customize the plots.\n\nfrom plotly.subplots import make_subplots\n\nfig = make_subplots(1, 2, specs=[[{\"type\": \"domain\"}, {\"type\": \"domain\"}]],)\nfig.add_trace(go.Sunburst(\n    labels=df_sum['id'],\n    parents=df_sum['parent'],\n    values=df_sum['value'],\n    branchvalues='total',\n    marker=dict(colorscale='sunset'),\n    hovertemplate='&lt;b&gt; Country : %{label} &lt;/b&gt; &lt;br&gt; Count : %{value} &lt;extra&gt;Population&lt;/extra&gt;',\n    maxdepth=2), 1, 1)\n\nfig.add_trace(go.Sunburst(\n    labels=df_count['id'],\n    parents=df_count['parent'],\n    values=df_count['value'],\n    branchvalues='total',\n    marker=dict(colorscale='viridis'),\n    hovertemplate='&lt;b&gt; Country : %{label} &lt;/b&gt; &lt;br&gt; Count : %{value} &lt;extra&gt;Cities&lt;/extra&gt;',\n    maxdepth=2), 1, 2)\n\nfig.update_layout(margin=dict(t=10, b=10, r=10, l=10))\nfig.show()\n# HTML(fig.to_html())"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Namaste 🙏  Welcome to Pratik’s space !",
-    "section": "",
-    "text": "Hi! I am Pratik. I am a software engineer specializing in solving complex data problems and I love to develop tools and web applications.  Currently, I work at Elucidata, where I leverage cutting-edge technology and tools to drive impactful outcomes. With a strong background in data science and web development, I have completed numerous successful projects.\nWhen I am not coding, I am probably at the gym or playing football. I led my team in college football tournaments and had a wonderful time participating in college sports.\nI recently shifted to Bangalore and I am loving the city and its weather. I have developed a newfound interest in hiking and exploring new places. I also enjoy photography and capturing beautiful moments.\n\nI love movies and one of the quotes that I live by is,\n\nIf you want something very badly, set it free. If it comes back to you, it’s yours forever. If it doesn’t, it was never yours to begin with.  - Indecent Proposal (1993)\n\n\nVisit Medium profile here"
-  },
-  {
     "objectID": "index.html#blog-posts",
     "href": "index.html#blog-posts",
     "title": "Namaste 🙏  Welcome to Pratik’s space !",
@@ -81,7 +74,7 @@
     "href": "about.html#experience",
     "title": "🧘🏻‍♂️ More about me",
     "section": "👨🏻‍💻 Experience",
-    "text": "👨🏻‍💻 Experience\n\nBayer Cropscience | May 2019 - June 2019  Elucidata | Aug 2021 - Present"
+    "text": "👨🏻‍💻 Experience\n\nBayer Cropscience | May 2019 - June 2019  - Data Science Intern\nElucidata | May 2021 - Aug 2021  - Data Science Intern\nElucidata | Aug 2021 - Present  - Data Analyst  - Software Engineer"
   },
   {
     "objectID": "about.html#education",
