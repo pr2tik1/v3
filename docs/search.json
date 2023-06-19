@@ -4,21 +4,56 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
-    "text": "Hi, welcome to my blog. I primarily write about topics related to data science, software development, and artificial intelligence. Here, I share my experiences and thoughts on the new tools I explore.\nHowever, I also enjoy sharing my everyday life experiences and the things I learn. Recently, I relocated to Bangalore, away from my family. Oh, how I miss them!\nI believe this space allows me to express myself and share my thoughts with anyone who is interested. I am eager to learn from my readers and would appreciate their comments on any of my posts. While I started blogging back in 2020, using platforms like fastpages and Medium, I have now shifted to Quarto, and I am already loving it!\nIn today’s world, we have various ways to express ourselves, such as Instagram reels or live streams. However, I believe that words hold a greater sense of power and confidence. There’s something fulfilling about writing and publishing my thoughts. Hence, on this day, I am embarking on a fresh start of my blogging journey with this new web page of mine."
+    "text": "A view from Kodaikanal camp\n\n\nHi, welcome to my blog. I primarily write about topics related to data science, software development, and artificial intelligence. Here, I share my experiences and thoughts on the new tools I explore. However, I also enjoy sharing my everyday life experiences and the things I learn. Recently, I relocated to Bangalore, away from my family. Oh, how I miss them!\nI believe this space allows me to express myself and share my thoughts with anyone who is interested. I am eager to learn from my readers and would appreciate their comments on any of my posts. While I started blogging back in 2020, using platforms like fastpages and Medium, I have now shifted to Quarto, and I am already loving it!\nI could have considered other various ways to express myself, such as Instagram reels or live streams. However, I believe that words hold a greater sense of power and confidence. There’s something fulfilling about writing and publishing my thoughts. Hence, on this day, I am embarking on a fresh start of my blogging journey with this new web page of mine."
   },
   {
-    "objectID": "draft-posts/post-with-code/index.html",
-    "href": "draft-posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/sunburst/Plotly-Sunburst.html",
+    "href": "posts/sunburst/Plotly-Sunburst.html",
+    "title": "Interactive Sunburst Charts - Plotly",
     "section": "",
-    "text": "This is a post with executable code.\n1+1"
+    "text": "Data visualization plays a vital role in various domains such as data analytics, data science, data dashboarding, and exploratory/statistical analysis. Within the Python and R ecosystems, there are several popular visualization libraries commonly used. These include:\n\nMatplotlib\nSeaborn\nPlotly\nAltair\nBokeh\n\nAmong these, the widely used library is the Plotly Graphing Library, which offers libraries in multiple languages, high-quality scientific/non-scientific graphs, and easily shareable interactive plots.\nIn this post, I will be discussing an intriguing plot called the Sunburst Chart. Sunburst charts provide an interactive visualization of layered information, allowing for an enhanced understanding of complex data structures."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Namaste 🙏  Welcome to Pratik’s space !",
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#a-introduction",
+    "href": "posts/sunburst/Plotly-Sunburst.html#a-introduction",
+    "title": "Interactive Sunburst Charts - Plotly",
     "section": "",
-    "text": "Hi! I am Pratik. I am a software engineer specializing in solving complex data problems and I love to develop tools and web applications.  Currently, I work at Elucidata, where I leverage cutting-edge technology and tools to drive impactful outcomes. With a strong background in data science and web development, I have completed numerous successful projects.\nWhen I am not coding, I am probably at the gym or playing football. I led my team in college football tournaments and had a wonderful time participating in college sports.\nI recently shifted to Bangalore and I am loving the city and its weather. I have developed a newfound interest in hiking and exploring new places. I also enjoy photography and capturing beautiful moments.\n\nI love movies and one of the quotes that I live by is,\n\nIf you want something very badly, set it free. If it comes back to you, it’s yours forever. If it doesn’t, it was never yours to begin with.  - Indecent Proposal (1993)\n\n\nVisit Medium profile here"
+    "text": "Data visualization plays a vital role in various domains such as data analytics, data science, data dashboarding, and exploratory/statistical analysis. Within the Python and R ecosystems, there are several popular visualization libraries commonly used. These include:\n\nMatplotlib\nSeaborn\nPlotly\nAltair\nBokeh\n\nAmong these, the widely used library is the Plotly Graphing Library, which offers libraries in multiple languages, high-quality scientific/non-scientific graphs, and easily shareable interactive plots.\nIn this post, I will be discussing an intriguing plot called the Sunburst Chart. Sunburst charts provide an interactive visualization of layered information, allowing for an enhanced understanding of complex data structures."
+  },
+  {
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#b-sunburst-chart",
+    "href": "posts/sunburst/Plotly-Sunburst.html#b-sunburst-chart",
+    "title": "Interactive Sunburst Charts - Plotly",
+    "section": "(B) Sunburst Chart",
+    "text": "(B) Sunburst Chart\nA sunburst chart is a powerful visualization tool used to represent hierarchical datasets. In a hierarchical dataset, there exists a parent-child relationship among the features or variables, resembling a tree-like structure. To generate a sunburst plot using Plotly, you can leverage the capabilities of either plotly.express or plotly.graph_objects libraries.\nLet’s consider an example dataframe (dummy data for demonstration purposes) with a tree-like structure, where the columns or features exhibit parent-child relationships with other columns.\nGeneral Dataset: This dataframe contains classes and values organized in columns, as depicted in the sample data provided. Sunburst DataFrame: This hierarchical dataframe defines the logical parent-child relationships between columns and their corresponding values.\nNow, let’s delve into how this data would appear by visualizing it using a sunburst chart."
+  },
+  {
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#c-datasets",
+    "href": "posts/sunburst/Plotly-Sunburst.html#c-datasets",
+    "title": "Interactive Sunburst Charts - Plotly",
+    "section": "(C) Datasets",
+    "text": "(C) Datasets\nThe following dataset is a dummy data for demonstration. Usually, you may come accross, this kind of data while working on a data science/analytics projects.\n\n#Importing pandas to handle dataframe\nimport pandas as pd\n# Suppress pandas warnings\nimport warnings\nwarnings.filterwarnings(\"ignore\")\n\n\ndata = pd.read_csv(\"../data/dummy_data.csv\")\ndata.head()\n\n\n\n\n\n\n\n\nCountry\nState\nCity\nPopulation\n\n\n\n\n0\nIndia\nINMP\nA1\n512\n\n\n1\nIndia\nINCG\nB2\n12201\n\n\n2\nIndia\nINCG\nM1\n9021\n\n\n3\nUSA\nUSNY\nC2\n812\n\n\n4\nUSA\nUSNY\nN1\n821\n\n\n\n\n\n\n\nThe dataset is not in hierachical form. The sunburst chart needs a parent, child and value variable for generating the plot. Hence, we need to convert the table into a ‘chart-acceptable’ format. The following function performs the job. The function is modified version of original function defined at Plotly’s documentation, to know more about this please visit here.\n\ndef build_hierarchical_dataframe(df, levels, value_column, metric):\n    \"\"\"\n    Build a hierarchy of levels for Sunburst.\n    - Levels are given starting from the bottom to the top of the hierarchy,\n    i.e. the last level corresponds to the root.\n    - Input : \n        - df : pandas dataframe \n        - levels : list of column names in the order, child to root.\n        - value_column : string value corresponding to value of column to display in chart.\n        - metric : string value equal to \"sum\" or \"count\".\n    - Output:\n        - df_all_trees : pandas dataframe for sunburst with columns, ['id', 'parent', 'value'].  \n    \"\"\"\n    df_all_trees = pd.DataFrame(columns=['id', 'parent', 'value'])\n    \n    for i, level in enumerate(levels):\n        df_tree = pd.DataFrame(columns=['id', 'parent', 'value'])\n        ## Groupby based upon metric chosen\n        if metric==\"count\":\n            dfg = df.groupby(levels[i:]).count()\n        else:\n            dfg = df.groupby(levels[i:]).sum()\n        \n        dfg = dfg.reset_index()\n        df_tree['id'] = dfg[level].copy()\n\n        ## Set parent of the levels \n        if i &lt; len(levels) - 1:\n            df_tree['parent'] = dfg[levels[i+1]].copy()\n        else:\n            df_tree['parent'] = 'Total'\n        \n        df_tree['value'] = dfg[value_column]\n        df_all_trees = pd.concat([df_all_trees, df_tree], ignore_index=True)\n    \n    ## Value calculation for parent \n    if metric==\"count\":\n        total = pd.Series(dict(id='Total', parent='', value=df[value_column].count()))\n    else:\n        total = pd.Series(dict(id='Total', parent='', value=df[value_column].sum()))\n    \n    ## Add frames one below the other to form the final dataframe\n    df_all_trees = pd.concat([df_all_trees, pd.DataFrame([total])], ignore_index=True)\n    return df_all_trees\n\n\nlevels = ['City', 'State', 'Country'] \nvalue_column = 'Population'\nmetric = \"sum\"\n\n\nHierarchical Sum dataframe\nThis dataframe represents total population accross Country, State and City under study.\n\ndf_sum=build_hierarchical_dataframe(data, levels, value_column, metric=\"sum\")\ndf_sum\n\n\n\n\n\n\n\n\nid\nparent\nvalue\n\n\n\n\n0\nA1\nINMP\n512\n\n\n1\nB2\nINCG\n12201\n\n\n2\nC2\nUSNY\n812\n\n\n3\nD1\nINSD\n9104\n\n\n4\nE2\nINGD\n132\n\n\n5\nF1\nUSSF\n82\n\n\n6\nG2\nINSA\n5121\n\n\n7\nH1\nINAS\n1232\n\n\n8\nI2\nUSHF\n8841\n\n\n9\nJ1\nINSR\n11\n\n\n10\nK2\nINCQ\n1236\n\n\n11\nL3\nUSSF\n1200\n\n\n12\nM1\nINCG\n9021\n\n\n13\nN1\nUSNY\n821\n\n\n14\nO2\nUSNY\n128\n\n\n15\nP1\nINSD\n20\n\n\n16\nQ1\nUSXO\n4120\n\n\n17\nR1\nUSXO\n60\n\n\n18\nS1\nINGD\n6012\n\n\n19\nINAS\nIndia\n1232\n\n\n20\nINCG\nIndia\n21222\n\n\n21\nINCQ\nIndia\n1236\n\n\n22\nINGD\nIndia\n6144\n\n\n23\nINMP\nIndia\n512\n\n\n24\nINSA\nIndia\n5121\n\n\n25\nINSD\nIndia\n9124\n\n\n26\nINSR\nIndia\n11\n\n\n27\nUSHF\nUSA\n8841\n\n\n28\nUSNY\nUSA\n1761\n\n\n29\nUSSF\nUSA\n1282\n\n\n30\nUSXO\nUSA\n4180\n\n\n31\nIndia\nTotal\n44602\n\n\n32\nUSA\nTotal\n16064\n\n\n33\nTotal\n\n60666\n\n\n\n\n\n\n\n\n\nHierarchical Count dataframe\nThis dataframe represents number of sub-classes (like City) accross Country and State under study.\n\ndf_count=build_hierarchical_dataframe(data, levels, value_column, metric=\"count\")\ndf_count\n\n\n\n\n\n\n\n\nid\nparent\nvalue\n\n\n\n\n0\nA1\nINMP\n1\n\n\n1\nB2\nINCG\n1\n\n\n2\nC2\nUSNY\n1\n\n\n3\nD1\nINSD\n1\n\n\n4\nE2\nINGD\n1\n\n\n5\nF1\nUSSF\n1\n\n\n6\nG2\nINSA\n1\n\n\n7\nH1\nINAS\n1\n\n\n8\nI2\nUSHF\n1\n\n\n9\nJ1\nINSR\n1\n\n\n10\nK2\nINCQ\n1\n\n\n11\nL3\nUSSF\n1\n\n\n12\nM1\nINCG\n1\n\n\n13\nN1\nUSNY\n1\n\n\n14\nO2\nUSNY\n1\n\n\n15\nP1\nINSD\n1\n\n\n16\nQ1\nUSXO\n1\n\n\n17\nR1\nUSXO\n1\n\n\n18\nS1\nINGD\n1\n\n\n19\nINAS\nIndia\n1\n\n\n20\nINCG\nIndia\n2\n\n\n21\nINCQ\nIndia\n1\n\n\n22\nINGD\nIndia\n2\n\n\n23\nINMP\nIndia\n1\n\n\n24\nINSA\nIndia\n1\n\n\n25\nINSD\nIndia\n2\n\n\n26\nINSR\nIndia\n1\n\n\n27\nUSHF\nUSA\n1\n\n\n28\nUSNY\nUSA\n3\n\n\n29\nUSSF\nUSA\n2\n\n\n30\nUSXO\nUSA\n2\n\n\n31\nIndia\nTotal\n11\n\n\n32\nUSA\nTotal\n8\n\n\n33\nTotal\n\n19"
+  },
+  {
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#d-visualizations",
+    "href": "posts/sunburst/Plotly-Sunburst.html#d-visualizations",
+    "title": "Interactive Sunburst Charts - Plotly",
+    "section": "(D) Visualizations",
+    "text": "(D) Visualizations\nNow we would see the two most common ways of plotting sunburst charts in python. The user can choose any of the following modules,\n\nPlotly Express\nPlotly Graph Objects\n\nBoth of these modules generate same “figure object”. Just the difference comes in code syntax and in flexibility of modifying graph as required. Plotly express is more of generating plot by calling function from already defined set of parameters. One may be more comfortable in tweaking the details while working with graph objects. However, the beauty of plotly is that you are able do the same things in the figure generated from plotly express as those are possible in that with graph objects. \nWe will be using both of them, and generate the plots for the datasets generated in the above section.\n\nfrom io import StringIO\nfrom IPython.display import display_html, HTML\n\n\n(D.1.) Plotly Express\n\nimport plotly.express as px \n\nfigure = px.sunburst(data, path=['Country', 'State', 'City'], values='Population')\nfigure.update_layout(margin=dict(t=10, b=10, r=10, l=10))\nfigure.show() \n# HTML(figure.to_html(include_plotlyjs='cdn'))\n\n\n                                                \n\n\n\n\n(D.2.) Graph Objects\n\nimport plotly.graph_objects as go\n\nfigure = go.Figure()\nfigure.add_trace(go.Sunburst(\n        labels=df_sum['id'],\n        parents=df_sum['parent'],\n        values=df_sum['value'],\n        branchvalues='total',\n        marker=dict(colorscale='Rdbu'),\n        hovertemplate='&lt;b&gt; Country : %{label} &lt;/b&gt; &lt;br&gt; Count : %{value} &lt;extra&gt;Population&lt;/extra&gt;',\n        maxdepth=2)\n    )\nfigure.update_layout(margin=dict(t=10, b=10, r=10, l=10))\nfigure.show() \n# HTML(figure.to_html(include_plotlyjs='cdn'))"
+  },
+  {
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#e-communicating-plots-with-json",
+    "href": "posts/sunburst/Plotly-Sunburst.html#e-communicating-plots-with-json",
+    "title": "Interactive Sunburst Charts - Plotly",
+    "section": "(E) Communicating Plots with JSON",
+    "text": "(E) Communicating Plots with JSON\nPlotly has in-built function to save figure as json : write_json(). Following cells show how to write and regenerate the plots.\n\nfigure.write_json(\"../data/Sunburst_Chart.json\")\n\n\nimport json\n\nopened_file = open(\"../data/Sunburst_Chart.json\")\nopened_fig = json.load(opened_file)\n\nfig_ = go.Figure(\n    data = opened_fig['data'],\n    layout = opened_fig['layout']\n    )\nfig_.show()\n# HTML(fig_.to_html())"
+  },
+  {
+    "objectID": "posts/sunburst/Plotly-Sunburst.html#f-custom-plots",
+    "href": "posts/sunburst/Plotly-Sunburst.html#f-custom-plots",
+    "title": "Interactive Sunburst Charts - Plotly",
+    "section": "(F) Custom Plots",
+    "text": "(F) Custom Plots\nIn the final section we would see the go.Figure subplots, where fully customize the plots.\n\nfrom plotly.subplots import make_subplots\n\nfig = make_subplots(1, 2, specs=[[{\"type\": \"domain\"}, {\"type\": \"domain\"}]],)\nfig.add_trace(go.Sunburst(\n    labels=df_sum['id'],\n    parents=df_sum['parent'],\n    values=df_sum['value'],\n    branchvalues='total',\n    marker=dict(colorscale='sunset'),\n    hovertemplate='&lt;b&gt; Country : %{label} &lt;/b&gt; &lt;br&gt; Count : %{value} &lt;extra&gt;Population&lt;/extra&gt;',\n    maxdepth=2), 1, 1)\n\nfig.add_trace(go.Sunburst(\n    labels=df_count['id'],\n    parents=df_count['parent'],\n    values=df_count['value'],\n    branchvalues='total',\n    marker=dict(colorscale='viridis'),\n    hovertemplate='&lt;b&gt; Country : %{label} &lt;/b&gt; &lt;br&gt; Count : %{value} &lt;extra&gt;Cities&lt;/extra&gt;',\n    maxdepth=2), 1, 2)\n\nfig.update_layout(margin=dict(t=10, b=10, r=10, l=10))\nfig.show()\n# HTML(fig.to_html())"
   },
   {
     "objectID": "index.html#blog-posts",
@@ -39,7 +74,7 @@
     "href": "about.html#experience",
     "title": "🧘🏻‍♂️ More about me",
     "section": "👨🏻‍💻 Experience",
-    "text": "👨🏻‍💻 Experience\n\nBayer Cropscience | May 2019 - June 2019  Elucidata | Aug 2021 - Present"
+    "text": "👨🏻‍💻 Experience\n\nBayer Cropscience | May 2019 - June 2019  - Data Science Intern\nElucidata | May 2021 - Aug 2021  - Data Science Intern\nElucidata | Aug 2021 - Present  - Data Analyst  - Software Engineer"
   },
   {
     "objectID": "about.html#education",
@@ -51,62 +86,6 @@
   {
     "objectID": "about.html#skills",
     "href": "about.html#skills",
-    "title": "🧘🏻‍♂️ More about me",
-    "section": "🤹🏻 Skills",
-    "text": "🤹🏻 Skills"
-  },
-  {
-    "objectID": "myblog/posts/welcome/index.html",
-    "href": "myblog/posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Hi, welcome to my blog. I primarily write about topics related to data science, software development, and artificial intelligence. Here, I share my experiences and thoughts on the new tools I explore.\nHowever, I also enjoy sharing my everyday life experiences and the things I learn. Recently, I relocated to Bangalore, away from my family. Oh, how I miss them!\nI believe this space allows me to express myself and share my thoughts with anyone who is interested. I am eager to learn from my readers and would appreciate their comments on any of my posts. While I started blogging back in 2020, using platforms like fastpages and Medium, I have now shifted to Quarto, and I am already loving it!\nIn today’s world, we have various ways to express ourselves, such as Instagram reels or live streams. However, I believe that words hold a greater sense of power and confidence. There’s something fulfilling about writing and publishing my thoughts. Hence, on this day, I am embarking on a fresh start of my blogging journey with this new web page of mine."
-  },
-  {
-    "objectID": "myblog/draft-posts/post-with-code/index.html",
-    "href": "myblog/draft-posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n1+1"
-  },
-  {
-    "objectID": "myblog/index.html",
-    "href": "myblog/index.html",
-    "title": "Namaste 🙏  Welcome to Pratik’s space !",
-    "section": "",
-    "text": "Hi! I am Pratik. I am a software engineer specializing in solving complex data problems and I love to develop tools and web applications.  Currently, I work at Elucidata, where I leverage cutting-edge technology and tools to drive impactful outcomes. With a strong background in data science and web development, I have completed numerous successful projects.\nWhen I am not coding, I am probably at the gym or playing football. I led my team in college football tournaments and had a wonderful time participating in college sports.\nI recently shifted to Bangalore and I am loving the city and its weather. I have developed a newfound interest in hiking and exploring new places. I also enjoy photography and capturing beautiful moments.\n\nI love movies and one of the quotes that I live by is,\n\nIf you want something very badly, set it free. If it comes back to you, it’s yours forever. If it doesn’t, it was never yours to begin with.  - Indecent Proposal (1993)\n\n\nVisit Medium profile here"
-  },
-  {
-    "objectID": "myblog/index.html#blog-posts",
-    "href": "myblog/index.html#blog-posts",
-    "title": "Namaste 🙏  Welcome to Pratik’s space !",
-    "section": "Blog Posts",
-    "text": "Blog Posts"
-  },
-  {
-    "objectID": "myblog/about.html",
-    "href": "myblog/about.html",
-    "title": "🧘🏻‍♂️ More about me",
-    "section": "",
-    "text": "I am a software engineer with a passion for web application development, AI, deep learning, and building data-driven projects. With extensive knowledge in various programming languages and the necessary skills to implement them, I have gained valuable experience over the course of 2 years in the development field.\nCurrently, I am working as a software engineer at a drug discovery startup in the bioinformatics domain. In this role, I am responsible for managing and delivering client needs, which includes developing a data-driven single cell visualization tool. I take great pride in ensuring that client requirements are met with utmost professionalism and efficiency.\nMy enthusiasm for software engineering extends beyond the workplace, as I actively engage in exploring innovative technologies and staying up-to-date with the latest industry trends. I am constantly seeking opportunities to apply my expertise in creating impactful solutions and driving positive outcomes.\nIf you are looking for a dedicated software engineer with a strong background in web application development, AI, and deep learning, I am confident in my ability to contribute to your projects and deliver exceptional results."
-  },
-  {
-    "objectID": "myblog/about.html#experience",
-    "href": "myblog/about.html#experience",
-    "title": "🧘🏻‍♂️ More about me",
-    "section": "👨🏻‍💻 Experience",
-    "text": "👨🏻‍💻 Experience\n\nBayer Cropscience | May 2019 - June 2019  Elucidata | Aug 2021 - Present"
-  },
-  {
-    "objectID": "myblog/about.html#education",
-    "href": "myblog/about.html#education",
-    "title": "🧘🏻‍♂️ More about me",
-    "section": "🏫 Education",
-    "text": "🏫 Education\n\nNational Institute of Technology, Raipur | Bachelors in Electronics and Communication Engineering(Aug 2016 - June 2020)"
-  },
-  {
-    "objectID": "myblog/about.html#skills",
-    "href": "myblog/about.html#skills",
     "title": "🧘🏻‍♂️ More about me",
     "section": "🤹🏻 Skills",
     "text": "🤹🏻 Skills"

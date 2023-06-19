@@ -3,14 +3,25 @@ project:
   output-dir: docs
   
 website:
-  title: "👨🏻‍💻 Pratik Kumar"
+  title: "Pratik Kumar"
   navbar:
     right:
-      - about.qmd
+      - href: index.qmd
+        text: Home      
+      - href: about.qmd
+        text: About me
+      - icon: twitter
+        href: https://twitter.com/Pratikpkb
+      - icon: linkedin
+        href: https://www.linkedin.com/in/pratik-kumar04/
+      - icon: github
+        href: https://github.com/pr2tik1
+      - icon: medium
+        href: https://medium.com/@pr2tik1
 
 format:
   html:
-    theme: cosmo
+    theme: cosmo #darkly #pulse #skectchy #superhero 
     css: styles.css
 
 

@@ -5,12 +5,12 @@ date: "2023-06-19"
 categories: [news]
 ---
 
-![](../../images/sunset.png)
+![A view from Kodaikanal camp](../../images/IMG_5613.jpeg)
 
-Hi, welcome to my blog. I primarily write about topics related to data science, software development, and artificial intelligence. Here, I share my experiences and thoughts on the new tools I explore.
-
-However, I also enjoy sharing my everyday life experiences and the things I learn. Recently, I relocated to Bangalore, away from my family. Oh, how I miss them!
+Hi, welcome to my blog. I primarily write about topics related to data science, software development, and artificial intelligence. Here, I share my experiences and thoughts on the new tools I explore. However, I also enjoy sharing my everyday life experiences and the things I learn. Recently, I relocated to Bangalore, away from my family. Oh, how I miss them!
 
 I believe this space allows me to express myself and share my thoughts with anyone who is interested. I am eager to learn from my readers and would appreciate their comments on any of my posts. While I started blogging back in 2020, using platforms like fastpages and Medium, I have now shifted to Quarto, and I am already loving it!
 
-In today's world, we have various ways to express ourselves, such as Instagram reels or live streams. However, I believe that words hold a greater sense of power and confidence. There's something fulfilling about writing and publishing my thoughts. Hence, on this day, I am embarking on a fresh start of my blogging journey with this new web page of mine.
+I could have considered other various ways to express myself, such as Instagram reels or live streams. However, I believe that words hold a greater sense of power and confidence. There's something fulfilling about writing and publishing my thoughts. Hence, on this day, I am embarking on a fresh start of my blogging journey with this new web page of mine.
+
+---

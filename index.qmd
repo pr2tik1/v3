@@ -11,19 +11,18 @@ listing:
 
 page-layout: full
 title-block-banner: true
+website:
+  search: 
+    location: navbar
+    type: overlay
+  back-to-top-navigation: true
 ---
-
-:::{.columns}
-:::{.column width="40%" }
-![](images/profile.jpg)
+:::{.column-margin}
+![](images/profile.png)
 :::
 
-:::{.column width="60%" style="padding-left: 50px;"}
-Hi! I am Pratik. I am a software engineer specializing in solving complex data problems and I love to develop tools and web applications. <br> Currently, I work at **Elucidata**, where I leverage cutting-edge technology and tools to drive impactful outcomes. With a strong background in data science and web development, I have completed numerous successful projects.
-
-When I am not coding, I am probably at the gym or playing football. I led my team in college football tournaments and had a wonderful time participating in college sports.
-
-I recently shifted to Bangalore and I am loving the city and its weather. I have developed a newfound interest in hiking and exploring new places. I also enjoy photography and capturing beautiful moments.
+:::{.column width="100%"}
+Hi! I am Pratik. I am a software engineer specializing in solving complex data problems and I love to develop tools and web applications. Currently, I work at **Elucidata**, where I leverage cutting-edge technology and tools to drive impactful outcomes. With a strong background in data science and web development, I have completed numerous successful projects. When I am not coding, I am probably at the gym or playing football. I led my team in college football tournaments and had a wonderful time participating in college sports.
 
 ::: quote
 
@@ -32,15 +31,7 @@ I love movies and one of the quotes that I live by is,
 >  *If you want something very badly, set it free. If it comes back to you, it's yours forever. If it doesn't, it was never yours to begin with.* <br><br> - Indecent Proposal (1993)
 
 :::
-
-Visit Medium profile [here](https://medium.com/@pr2tik1)
-
 :::
-:::
-:::{.columns}
-:::{.column width="100%"}
 
 ## Blog Posts
 
-:::
-:::

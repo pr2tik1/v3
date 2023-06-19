@@ -1,0 +1,662 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Sunburst Charts - Plotly},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Sunburst Charts - Plotly}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, boxrule=0pt, breakable, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners]}{\end{tcolorbox}}\fi
+
+\hypertarget{a-introduction}{%
+\subsection{(A) Introduction ☕️}\label{a-introduction}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Data visualization plays a vital role in various domains such as data
+analytics, data science, data dashboarding, and exploratory/statistical
+analysis. Within the Python and R ecosystems, there are several popular
+visualization libraries commonly used. These include:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://matplotlib.org}{Matplotlib}
+\item
+  \href{https://seaborn.pydata.org}{Seaborn}
+\item
+  \href{https://plotly.com}{Plotly}
+\item
+  \href{https://altair-viz.github.io}{Altair}
+\item
+  \href{https://bokeh.org}{Bokeh}
+\end{itemize}
+
+Among these, the widely used library is the Plotly Graphing Library,
+which offers libraries in multiple languages, high-quality
+scientific/non-scientific graphs, and easily shareable interactive
+plots.
+
+In this post, I will be discussing an intriguing plot called the
+Sunburst Chart. Sunburst charts provide an interactive visualization of
+layered information, allowing for an enhanced understanding of complex
+data structures.
+
+\hypertarget{b-sunburst-chart}{%
+\subsection{\texorpdfstring{(B) \textbf{Sunburst
+Chart}}{(B) Sunburst Chart}}\label{b-sunburst-chart}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+A sunburst chart is a powerful visualization tool used to represent
+hierarchical datasets. In a hierarchical dataset, there exists a
+parent-child relationship among the features or variables, resembling a
+tree-like structure. To generate a sunburst plot using Plotly, you can
+leverage the capabilities of either plotly.express or
+plotly.graph\_objects libraries.
+
+Let's consider an example dataframe (dummy data for demonstration
+purposes) with a tree-like structure, where the columns or features
+exhibit parent-child relationships with other columns.
+
+General Dataset: This dataframe contains classes and values organized in
+columns, as depicted in the sample data provided. Sunburst DataFrame:
+This hierarchical dataframe defines the logical parent-child
+relationships between columns and their corresponding values.
+
+Now, let's delve into how this data would appear by visualizing it using
+a sunburst chart.
+
+\hypertarget{c-datasets}{%
+\subsection{(C) Datasets}\label{c-datasets}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+The following dataset is a dummy data for demonstration. Usually, you
+may come accross, this kind of data while working on a data
+science/analytics projects.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Importing pandas to handle dataframe}
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\CommentTok{\# Suppress pandas warnings}
+\ImportTok{import}\NormalTok{ warnings}
+\NormalTok{warnings.filterwarnings(}\StringTok{"ignore"}\NormalTok{)}
+
+\NormalTok{data }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{"../data/dummy\_data.csv"}\NormalTok{)}
+\NormalTok{data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{llllr}
+\toprule
+{} & Country & State & City &  Population \\
+\midrule
+0  &   India &  INMP &   A1 &         512 \\
+1  &   India &  INCG &   B2 &       12201 \\
+2  &   India &  INCG &   M1 &        9021 \\
+3  &     USA &  USNY &   C2 &         812 \\
+4  &     USA &  USNY &   N1 &         821 \\
+5  &     USA &  USNY &   O2 &         128 \\
+6  &   India &  INSD &   D1 &        9104 \\
+7  &   India &  INGD &   E2 &         132 \\
+8  &     USA &  USSF &   F1 &          82 \\
+9  &   India &  INSA &   G2 &        5121 \\
+10 &   India &  INAS &   H1 &        1232 \\
+11 &     USA &  USHF &   I2 &        8841 \\
+12 &   India &  INSR &   J1 &          11 \\
+13 &   India &  INCQ &   K2 &        1236 \\
+14 &     USA &  USSF &   L3 &        1200 \\
+15 &     USA &  USXO &   R1 &          60 \\
+16 &     USA &  USXO &   Q1 &        4120 \\
+17 &   India &  INGD &   S1 &        6012 \\
+18 &   India &  INSD &   P1 &          20 \\
+\bottomrule
+\end{tabular}
+
+The dataset is not in hierachical form. The sunburst chart needs a
+parent, child and value variable for generating the plot. Hence, we need
+to convert the table into a `chart-acceptable' format. The following
+function performs the job. The function is modified version of original
+function defined at Plotly's documentation, to know more about this
+please visit
+\href{https://plotly.com/python/sunburst-charts/\#:~:text=Charred-,Sunburst\%20chart\%20with\%20a\%20continuous\%20colorscale,-The\%20example\%20below}{here}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ build\_hierarchical\_dataframe(df, levels, value\_column, metric):}
+    \CommentTok{"""}
+\CommentTok{    Build a hierarchy of levels for Sunburst.}
+\CommentTok{    {-} Levels are given starting from the bottom to the top of the hierarchy,}
+\CommentTok{    i.e. the last level corresponds to the root.}
+\CommentTok{    {-} Input : }
+\CommentTok{        {-} df : pandas dataframe }
+\CommentTok{        {-} levels : list of column names in the order, child to root.}
+\CommentTok{        {-} value\_column : string value corresponding to value of column to display in chart.}
+\CommentTok{        {-} metric : string value equal to "sum" or "count".}
+\CommentTok{    {-} Output:}
+\CommentTok{        {-} df\_all\_trees : pandas dataframe for sunburst with columns, [\textquotesingle{}id\textquotesingle{}, \textquotesingle{}parent\textquotesingle{}, \textquotesingle{}value\textquotesingle{}].  }
+\CommentTok{    """}
+\NormalTok{    df\_all\_trees }\OperatorTok{=}\NormalTok{ pd.DataFrame(columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{])}
+    
+    \ControlFlowTok{for}\NormalTok{ i, level }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(levels):}
+\NormalTok{        df\_tree }\OperatorTok{=}\NormalTok{ pd.DataFrame(columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{])}
+        \CommentTok{\#\# Groupby based upon metric chosen}
+        \ControlFlowTok{if}\NormalTok{ metric}\OperatorTok{==}\StringTok{"count"}\NormalTok{:}
+\NormalTok{            dfg }\OperatorTok{=}\NormalTok{ df.groupby(levels[i:]).count()}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            dfg }\OperatorTok{=}\NormalTok{ df.groupby(levels[i:]).}\BuiltInTok{sum}\NormalTok{()}
+        
+\NormalTok{        dfg }\OperatorTok{=}\NormalTok{ dfg.reset\_index()}
+\NormalTok{        df\_tree[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ dfg[level].copy()}
+
+        \CommentTok{\#\# Set parent of the levels }
+        \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{\textless{}} \BuiltInTok{len}\NormalTok{(levels) }\OperatorTok{{-}} \DecValTok{1}\NormalTok{:}
+\NormalTok{            df\_tree[}\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ dfg[levels[i}\OperatorTok{+}\DecValTok{1}\NormalTok{]].copy()}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            df\_tree[}\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{] }\OperatorTok{=} \StringTok{\textquotesingle{}Total\textquotesingle{}}
+        
+\NormalTok{        df\_tree[}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ dfg[value\_column]}
+\NormalTok{        df\_all\_trees }\OperatorTok{=}\NormalTok{ pd.concat([df\_all\_trees, df\_tree], ignore\_index}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+    
+    \CommentTok{\#\# Value calculation for parent }
+    \ControlFlowTok{if}\NormalTok{ metric}\OperatorTok{==}\StringTok{"count"}\NormalTok{:}
+\NormalTok{        total }\OperatorTok{=}\NormalTok{ pd.Series(}\BuiltInTok{dict}\NormalTok{(}\BuiltInTok{id}\OperatorTok{=}\StringTok{\textquotesingle{}Total\textquotesingle{}}\NormalTok{, parent}\OperatorTok{=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, value}\OperatorTok{=}\NormalTok{df[value\_column].count()))}
+    \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{        total }\OperatorTok{=}\NormalTok{ pd.Series(}\BuiltInTok{dict}\NormalTok{(}\BuiltInTok{id}\OperatorTok{=}\StringTok{\textquotesingle{}Total\textquotesingle{}}\NormalTok{, parent}\OperatorTok{=}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{, value}\OperatorTok{=}\NormalTok{df[value\_column].}\BuiltInTok{sum}\NormalTok{()))}
+    
+    \CommentTok{\#\# Add frames one below the other to form the final dataframe}
+\NormalTok{    df\_all\_trees }\OperatorTok{=}\NormalTok{ pd.concat([df\_all\_trees, pd.DataFrame([total])], ignore\_index}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+    \ControlFlowTok{return}\NormalTok{ df\_all\_trees}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{levels }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}City\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}State\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Country\textquotesingle{}}\NormalTok{] }
+\NormalTok{value\_column }\OperatorTok{=} \StringTok{\textquotesingle{}Population\textquotesingle{}}
+\NormalTok{metric }\OperatorTok{=} \StringTok{"sum"}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{hierarchical-sum-dataframe}{%
+\subsubsection{Hierarchical Sum
+dataframe}\label{hierarchical-sum-dataframe}}
+
+This dataframe represents total population accross Country, State and
+City under study.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_sum}\OperatorTok{=}\NormalTok{build\_hierarchical\_dataframe(data, levels, value\_column, metric}\OperatorTok{=}\StringTok{"sum"}\NormalTok{)}
+\NormalTok{df\_sum}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{llll}
+\toprule
+{} &     id & parent &  value \\
+\midrule
+0  &     A1 &   INMP &    512 \\
+1  &     B2 &   INCG &  12201 \\
+2  &     C2 &   USNY &    812 \\
+3  &     D1 &   INSD &   9104 \\
+4  &     E2 &   INGD &    132 \\
+5  &     F1 &   USSF &     82 \\
+6  &     G2 &   INSA &   5121 \\
+7  &     H1 &   INAS &   1232 \\
+8  &     I2 &   USHF &   8841 \\
+9  &     J1 &   INSR &     11 \\
+10 &     K2 &   INCQ &   1236 \\
+11 &     L3 &   USSF &   1200 \\
+12 &     M1 &   INCG &   9021 \\
+13 &     N1 &   USNY &    821 \\
+14 &     O2 &   USNY &    128 \\
+15 &     P1 &   INSD &     20 \\
+16 &     Q1 &   USXO &   4120 \\
+17 &     R1 &   USXO &     60 \\
+18 &     S1 &   INGD &   6012 \\
+19 &   INAS &  India &   1232 \\
+20 &   INCG &  India &  21222 \\
+21 &   INCQ &  India &   1236 \\
+22 &   INGD &  India &   6144 \\
+23 &   INMP &  India &    512 \\
+24 &   INSA &  India &   5121 \\
+25 &   INSD &  India &   9124 \\
+26 &   INSR &  India &     11 \\
+27 &   USHF &    USA &   8841 \\
+28 &   USNY &    USA &   1761 \\
+29 &   USSF &    USA &   1282 \\
+30 &   USXO &    USA &   4180 \\
+31 &  India &  Total &  44602 \\
+32 &    USA &  Total &  16064 \\
+33 &  Total &        &  60666 \\
+\bottomrule
+\end{tabular}
+
+\hypertarget{hierarchical-count-dataframe}{%
+\subsubsection{Hierarchical Count
+dataframe}\label{hierarchical-count-dataframe}}
+
+This dataframe represents number of sub-classes (like City) accross
+Country and State under study.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_count}\OperatorTok{=}\NormalTok{build\_hierarchical\_dataframe(data, levels, value\_column, metric}\OperatorTok{=}\StringTok{"count"}\NormalTok{)}
+\NormalTok{df\_count}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{llll}
+\toprule
+{} &     id & parent & value \\
+\midrule
+0  &     A1 &   INMP &     1 \\
+1  &     B2 &   INCG &     1 \\
+2  &     C2 &   USNY &     1 \\
+3  &     D1 &   INSD &     1 \\
+4  &     E2 &   INGD &     1 \\
+5  &     F1 &   USSF &     1 \\
+6  &     G2 &   INSA &     1 \\
+7  &     H1 &   INAS &     1 \\
+8  &     I2 &   USHF &     1 \\
+9  &     J1 &   INSR &     1 \\
+10 &     K2 &   INCQ &     1 \\
+11 &     L3 &   USSF &     1 \\
+12 &     M1 &   INCG &     1 \\
+13 &     N1 &   USNY &     1 \\
+14 &     O2 &   USNY &     1 \\
+15 &     P1 &   INSD &     1 \\
+16 &     Q1 &   USXO &     1 \\
+17 &     R1 &   USXO &     1 \\
+18 &     S1 &   INGD &     1 \\
+19 &   INAS &  India &     1 \\
+20 &   INCG &  India &     2 \\
+21 &   INCQ &  India &     1 \\
+22 &   INGD &  India &     2 \\
+23 &   INMP &  India &     1 \\
+24 &   INSA &  India &     1 \\
+25 &   INSD &  India &     2 \\
+26 &   INSR &  India &     1 \\
+27 &   USHF &    USA &     1 \\
+28 &   USNY &    USA &     3 \\
+29 &   USSF &    USA &     2 \\
+30 &   USXO &    USA &     2 \\
+31 &  India &  Total &    11 \\
+32 &    USA &  Total &     8 \\
+33 &  Total &        &    19 \\
+\bottomrule
+\end{tabular}
+
+\hypertarget{d-visualizations}{%
+\subsection{(D) Visualizations}\label{d-visualizations}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Now we would see the two most common ways of plotting sunburst charts in
+python. The user can choose any of the following modules,
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Plotly Express
+\item
+  Plotly Graph Objects
+\end{enumerate}
+
+Both of these modules generate same \emph{``figure object''}. Just the
+difference comes in code syntax and in flexibility of modifying graph as
+required. Plotly express is more of generating plot by calling function
+from already defined set of parameters. One may be more comfortable in
+tweaking the details while working with graph objects. However, the
+beauty of plotly is that you are able do the same things in the figure
+generated from plotly express as those are possible in that with graph
+objects.
+
+We will be using both of them, and generate the plots for the datasets
+generated in the above section.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ io }\ImportTok{import}\NormalTok{ StringIO}
+\ImportTok{from}\NormalTok{ IPython.display }\ImportTok{import}\NormalTok{ display\_html, HTML}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{d.1.-plotly-express}{%
+\subsubsection{(D.1.) Plotly Express}\label{d.1.-plotly-express}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ plotly.express }\ImportTok{as}\NormalTok{ px }
+
+\NormalTok{figure }\OperatorTok{=}\NormalTok{ px.sunburst(data, path}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Country\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}State\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}City\textquotesingle{}}\NormalTok{], values}\OperatorTok{=}\StringTok{\textquotesingle{}Population\textquotesingle{}}\NormalTok{)}
+\NormalTok{figure.update\_layout(margin}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(t}\OperatorTok{=}\DecValTok{10}\NormalTok{, b}\OperatorTok{=}\DecValTok{10}\NormalTok{, r}\OperatorTok{=}\DecValTok{10}\NormalTok{, l}\OperatorTok{=}\DecValTok{10}\NormalTok{))}
+\NormalTok{figure.show() }
+\CommentTok{\# HTML(figure.to\_html(include\_plotlyjs=\textquotesingle{}cdn\textquotesingle{}))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Unable to display output for mime type(s): text/html
+\end{verbatim}
+
+\begin{verbatim}
+Unable to display output for mime type(s): text/html
+\end{verbatim}
+
+\hypertarget{d.2.-graph-objects}{%
+\subsubsection{(D.2.) Graph Objects}\label{d.2.-graph-objects}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ plotly.graph\_objects }\ImportTok{as}\NormalTok{ go}
+
+\NormalTok{figure }\OperatorTok{=}\NormalTok{ go.Figure()}
+\NormalTok{figure.add\_trace(go.Sunburst(}
+\NormalTok{        labels}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{],}
+\NormalTok{        parents}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{],}
+\NormalTok{        values}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{],}
+\NormalTok{        branchvalues}\OperatorTok{=}\StringTok{\textquotesingle{}total\textquotesingle{}}\NormalTok{,}
+\NormalTok{        marker}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(colorscale}\OperatorTok{=}\StringTok{\textquotesingle{}Rdbu\textquotesingle{}}\NormalTok{),}
+\NormalTok{        hovertemplate}\OperatorTok{=}\StringTok{\textquotesingle{}\textless{}b\textgreater{} Country : \%}\SpecialCharTok{\{label\}}\StringTok{ \textless{}/b\textgreater{} \textless{}br\textgreater{} Count : \%}\SpecialCharTok{\{value\}}\StringTok{ \textless{}extra\textgreater{}Population\textless{}/extra\textgreater{}\textquotesingle{}}\NormalTok{,}
+\NormalTok{        maxdepth}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{    )}
+\NormalTok{figure.update\_layout(margin}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(t}\OperatorTok{=}\DecValTok{10}\NormalTok{, b}\OperatorTok{=}\DecValTok{10}\NormalTok{, r}\OperatorTok{=}\DecValTok{10}\NormalTok{, l}\OperatorTok{=}\DecValTok{10}\NormalTok{))}
+\NormalTok{figure.show() }
+\CommentTok{\# HTML(figure.to\_html(include\_plotlyjs=\textquotesingle{}cdn\textquotesingle{}))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Unable to display output for mime type(s): text/html
+\end{verbatim}
+
+\hypertarget{e-communicating-plots-with-json}{%
+\subsection{(E) Communicating Plots with
+JSON}\label{e-communicating-plots-with-json}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Plotly has in-built function to save figure as json :
+\emph{write\_json()}. Following cells show how to write and regenerate
+the plots.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{figure.write\_json(}\StringTok{"../data/Sunburst\_Chart.json"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ json}
+
+\NormalTok{opened\_file }\OperatorTok{=} \BuiltInTok{open}\NormalTok{(}\StringTok{"../data/Sunburst\_Chart.json"}\NormalTok{)}
+\NormalTok{opened\_fig }\OperatorTok{=}\NormalTok{ json.load(opened\_file)}
+
+\NormalTok{fig\_ }\OperatorTok{=}\NormalTok{ go.Figure(}
+\NormalTok{    data }\OperatorTok{=}\NormalTok{ opened\_fig[}\StringTok{\textquotesingle{}data\textquotesingle{}}\NormalTok{],}
+\NormalTok{    layout }\OperatorTok{=}\NormalTok{ opened\_fig[}\StringTok{\textquotesingle{}layout\textquotesingle{}}\NormalTok{]}
+\NormalTok{    )}
+\NormalTok{fig\_.show()}
+\CommentTok{\# HTML(fig\_.to\_html()) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Unable to display output for mime type(s): text/html
+\end{verbatim}
+
+\hypertarget{f-custom-plots}{%
+\subsection{(F) Custom Plots}\label{f-custom-plots}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+In the final section we would see the go.Figure subplots, where fully
+customize the plots.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ plotly.subplots }\ImportTok{import}\NormalTok{ make\_subplots}
+
+\NormalTok{fig }\OperatorTok{=}\NormalTok{ make\_subplots(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, specs}\OperatorTok{=}\NormalTok{[[\{}\StringTok{"type"}\NormalTok{: }\StringTok{"domain"}\NormalTok{\}, \{}\StringTok{"type"}\NormalTok{: }\StringTok{"domain"}\NormalTok{\}]],)}
+\NormalTok{fig.add\_trace(go.Sunburst(}
+\NormalTok{    labels}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{],}
+\NormalTok{    parents}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{],}
+\NormalTok{    values}\OperatorTok{=}\NormalTok{df\_sum[}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{],}
+\NormalTok{    branchvalues}\OperatorTok{=}\StringTok{\textquotesingle{}total\textquotesingle{}}\NormalTok{,}
+\NormalTok{    marker}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(colorscale}\OperatorTok{=}\StringTok{\textquotesingle{}sunset\textquotesingle{}}\NormalTok{),}
+\NormalTok{    hovertemplate}\OperatorTok{=}\StringTok{\textquotesingle{}\textless{}b\textgreater{} Country : \%}\SpecialCharTok{\{label\}}\StringTok{ \textless{}/b\textgreater{} \textless{}br\textgreater{} Count : \%}\SpecialCharTok{\{value\}}\StringTok{ \textless{}extra\textgreater{}Population\textless{}/extra\textgreater{}\textquotesingle{}}\NormalTok{,}
+\NormalTok{    maxdepth}\OperatorTok{=}\DecValTok{2}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+
+\NormalTok{fig.add\_trace(go.Sunburst(}
+\NormalTok{    labels}\OperatorTok{=}\NormalTok{df\_count[}\StringTok{\textquotesingle{}id\textquotesingle{}}\NormalTok{],}
+\NormalTok{    parents}\OperatorTok{=}\NormalTok{df\_count[}\StringTok{\textquotesingle{}parent\textquotesingle{}}\NormalTok{],}
+\NormalTok{    values}\OperatorTok{=}\NormalTok{df\_count[}\StringTok{\textquotesingle{}value\textquotesingle{}}\NormalTok{],}
+\NormalTok{    branchvalues}\OperatorTok{=}\StringTok{\textquotesingle{}total\textquotesingle{}}\NormalTok{,}
+\NormalTok{    marker}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(colorscale}\OperatorTok{=}\StringTok{\textquotesingle{}viridis\textquotesingle{}}\NormalTok{),}
+\NormalTok{    hovertemplate}\OperatorTok{=}\StringTok{\textquotesingle{}\textless{}b\textgreater{} Country : \%}\SpecialCharTok{\{label\}}\StringTok{ \textless{}/b\textgreater{} \textless{}br\textgreater{} Count : \%}\SpecialCharTok{\{value\}}\StringTok{ \textless{}extra\textgreater{}Cities\textless{}/extra\textgreater{}\textquotesingle{}}\NormalTok{,}
+\NormalTok{    maxdepth}\OperatorTok{=}\DecValTok{2}\NormalTok{), }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+
+\NormalTok{fig.update\_layout(margin}\OperatorTok{=}\BuiltInTok{dict}\NormalTok{(t}\OperatorTok{=}\DecValTok{10}\NormalTok{, b}\OperatorTok{=}\DecValTok{10}\NormalTok{, r}\OperatorTok{=}\DecValTok{10}\NormalTok{, l}\OperatorTok{=}\DecValTok{10}\NormalTok{))}
+\NormalTok{fig.show()}
+\CommentTok{\# HTML(fig.to\_html()) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Unable to display output for mime type(s): text/html
+\end{verbatim}
+
+\hypertarget{thank-you}{%
+\section{Thank you!}\label{thank-you}}
+
+\begin{itemize}
+\item
+  References :
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    \href{https://plotly.com/}{Plotly}
+  \item
+    \href{https://plotly.com/python/sunburst-charts/}{Sunburst in
+    Python}
+  \end{enumerate}
+\end{itemize}
+
+
+
+\end{document}
